@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>perspective属性|li*3实现书翻页动画</title>
+	<style>
+		/*
+			perspective属性为3D转换属性(CSS3),
+			形参:perspective: number|none;(元素距离视图的距离)
+			当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+
+		 */
+		body{ text-align:center; }
+		ul{ background:gray; width:100px; padding:20px; -webkit-perspective:200; }
+		li{ list-style:none; height:50px; width:100px; padding:0px; margin:0px; display:inline-block; background: white; border-radius:2px; }
+		.anim{
+			animation: anim 1s infinite;
+			margin-left: -100px;
+		}
+		@keyframes anim {
+			to{
+				transform: rotateY(-360deg);
+			}
+		}
+			.anim2{
+				animation: anim2 1s infinite;
+				margin-left: -100px;	
+			}
+			@keyframes anim2{
+				25%{
+					transform: rotateY(0deg)
+				}
+				100%{
+					transform: rotateY(-360deg);
+				}
+			}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+		<li class="anim">
+		<li class="anim2">
+	</ul>
+</body>
+</html>

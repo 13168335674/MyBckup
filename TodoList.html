@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+      <script src="vue.js"></script>
+      <script src="vue-router.js"></script>
+</head>
+<body>
+     <div id="app">
+           <input type="text" v-model="newTodoText" @keyup.enter="additem" placeholder="Add New Todo Text">
+           <button @click="additem">Add Item</button>
+           <ul>
+                 <li is="todo-item" v-for="(todo,index) in todos" :key="todo" :title="todo" @remove="todos.splice(index,1)">X</li>
+           </ul>
+     </div>
+</body>
+<script>
+      Vue.component('todo-item',{
+            props:['title'],
+            template:`
+                  <li>
+                        {{ title }}
+                        <button @click="$emit('remove')">X</button>
+                  </li>
+            `
+      })
+      new Vue({
+            el:"#app",
+            data:{
+                  newTodoText:'',
+                  todos:[
+                        
+                  ]
+            },
+            methods:{
+                  additem(){
+                        if(this.newTodoText){
+                              this.todos.push(this.newTodoText)
+                              this.newTodoText=''
+                        }
+                  }
+            }
+      })
+</script>
+</html>

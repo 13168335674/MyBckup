@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style lang="">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .clearfix {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        
+        .carousel {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .slide {
+            width: 500px;
+            height: 300px;
+        }
+        
+        li {
+            position: absolute
+        }
+        
+        img {
+            width: 500px;
+            height: 300px;
+        }
+        
+        .bullet {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        span {
+            width: 20px;
+            height: 5px;
+            border: 1px solid;
+            background: white;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .active {
+            background: red;
+        }
+        
+        .image-enter-active {
+            transform: translateX(0);
+            transition: all 1s ease;
+        }
+        
+        .image-leave-active {
+            transform: translateX(-100%);
+            transition: all 1s ease;
+        }
+        
+        .image-enter {
+            transform: translateX(100%)
+        }
+        
+        .image-leave {
+            transform: translateX(0)
+        }
+    </style>
+    <script src='https://unpkg.com/vue'>
+    </script>
+</head>
+
+<body>
+    <div class="carousel">
+        <transition-group tag='ul' class="clearfix slide" name='image'>
+            <li v-for='(image,index) in img' :key='index' v-show='index===mark'>
+                <a><img :src="image"></a>
+            </li>
+        </transition-group>
+        <div class="bullet">
+            <span v-for='(item,index) in img.length' :class="{'active':index===mark}" @click='change(index)'></span>
+        </div>
+    </div>
+    <script>
+      new Vue({
+    el: '.carousel',
+    data: {
+        mark: 0,
+        timer: null,
+        img: ['1.jpg','2.jpg'
+        ]
+    },
+    created() {
+        this.play()
+    },
+    methods: {
+        change(i) {
+            this.mark = i
+        },
+        autoPlay() {
+            this.mark++
+                if (this.mark === 4) {
+                    this.mark = 0
+                    return
+                }
+        },
+        play() {
+            setInterval(this.autoPlay, 3000)
+        }
+    }
+})
+    </script>
+</body>
+
+</html>
