@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>
+            CSS 选择器
+        </title>
+        <style>
+        	*{
+        		padding: 0;
+        		margin: 0;
+        	}
+			body{
+				font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;display: flex;justify-content: center;align-content: center;
+			}
+			#box{
+				width: 95vw;
+				height: 100%;
+				margin: 1vw;
+				padding: 2vw;
+				background: #eee;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+			}
+			table{
+				text-align: left;
+				align: center;
+
+			}
+			th{
+				border: 1px solid #4e72b8;
+				border-radius: .5vw;
+				color:#F9FAFC;
+				padding: 1vw;
+				background: #33a3dc;
+				margin-bottom: 2vw;
+			}
+			td{
+				padding: 10px;
+				border: 1px solid #58B7FF;
+				border-radius: .5vw;
+				padding: 1vw;
+				background: #FFF;
+			}
+			td:hover{
+				background: #90d7ec;
+				color:#fffef9;
+			}
+			a{text-decoration:none}
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <table class="dataintable" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <th>
+                            选择器
+                        </th>
+                        <th>
+                            例子
+                        </th>
+                        <th>
+                            例子描述
+                        </th>
+                        <th style="width: 5%;">
+                            CSS
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS .class 选择器" href="http://www.w3school.com.cn/cssref/selector_class.asp" target="_blank">
+                                .
+                                <em>
+                                    class
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            .intro
+                        </td>
+                        <td>
+                            选择 class="intro" 的所有元素。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS #id 选择器" href="http://www.w3school.com.cn/cssref/selector_id.asp" target="_blank">
+                                #
+                                <em>
+                                    id
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            #firstname
+                        </td>
+                        <td>
+                            选择 id="firstname" 的所有元素。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS * 选择器" href="http://www.w3school.com.cn/cssref/selector_all.asp" target="_blank">
+                                *
+                            </a>
+                        </td>
+                        <td>
+                            *
+                        </td>
+                        <td>
+                            选择所有元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS element 选择器" href="http://www.w3school.com.cn/cssref/selector_element.asp" target="_blank">
+                                <em>
+                                    element
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            p
+                        </td>
+                        <td>
+                            选择所有 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS element,element 选择器" href="http://www.w3school.com.cn/cssref/selector_element_comma.asp" target="_blank">
+                                <em>
+                                    element
+                                </em>
+                                ,
+                                <em>
+                                    element
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            div,p
+                        </td>
+                        <td>
+                            选择所有 &lt;div&gt; 元素和所有 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS element element 选择器" href="http://www.w3school.com.cn/cssref/selector_element_element.asp" target="_blank">
+                                <em>
+                                    element
+                                </em>
+                                <em>
+                                    element
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            div p
+                        </td>
+                        <td>
+                            选择 &lt;div&gt; 元素内部的所有 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS element>element 选择器" href="http://www.w3school.com.cn/cssref/selector_element_gt.asp" target="_blank">
+                                <em>
+                                    element
+                                </em>
+                                &gt;
+                                <em>
+                                    element
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            div&gt;p
+                        </td>
+                        <td>
+                            选择父元素为 &lt;div&gt; 元素的所有 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS element+element 选择器" href="http://www.w3school.com.cn/cssref/selector_element_plus.asp" target="_blank">
+                                <em>
+                                    element
+                                </em>
+                                +
+                                <em>
+                                    element
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            div+p
+                        </td>
+                        <td>
+                            选择紧接在 &lt;div&gt; 元素之后的所有 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS [attribute] 选择器" href="http://www.w3school.com.cn/cssref/selector_attribute.asp" target="_blank">
+                                [
+                                <em>
+                                    attribute
+                                </em>
+                                ]
+                            </a>
+                        </td>
+                        <td>
+                            [target]
+                        </td>
+                        <td>
+                            选择带有 target 属性所有元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS [attribute=value] 选择器" href="http://www.w3school.com.cn/cssref/selector_attribute_value.asp" target="_blank">
+                                [
+                                <em>
+                                    attribute
+                                </em>
+                                =
+                                <em>
+                                    value
+                                </em>
+                                ]
+                            </a>
+                        </td>
+                        <td>
+                            [target=_blank]
+                        </td>
+                        <td>
+                            选择 target="_blank" 的所有元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS [attribute~=value] 选择器" href="http://www.w3school.com.cn/cssref/selector_attribute_value_contain.asp" target="_blank">
+                                [
+                                <em>
+                                    attribute
+                                </em>
+                                ~=
+                                <em>
+                                    value
+                                </em>
+                                ]
+                            </a>
+                        </td>
+                        <td>
+                            [title~=flower]
+                        </td>
+                        <td>
+                            选择 title 属性包含单词 "flower" 的所有元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS [attribute|=value] 选择器" href="http://www.w3school.com.cn/cssref/selector_attribute_value_start.asp" target="_blank">
+                                [
+                                <em>
+                                    attribute
+                                </em>
+                                |=
+                                <em>
+                                    value
+                                </em>
+                                ]
+                            </a>
+                        </td>
+                        <td>
+                            [lang|=en]
+                        </td>
+                        <td>
+                            选择 lang 属性值以 "en" 开头的所有元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :link 选择器" href="http://www.w3school.com.cn/cssref/selector_link.asp" target="_blank">
+                                :link
+                            </a>
+                        </td>
+                        <td>
+                            a:link
+                        </td>
+                        <td>
+                            选择所有未被访问的链接。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :visited 选择器" href="http://www.w3school.com.cn/cssref/selector_visited.asp" target="_blank">
+                                :visited
+                            </a>
+                        </td>
+                        <td>
+                            a:visited
+                        </td>
+                        <td>
+                            选择所有已被访问的链接。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :active 选择器" href="http://www.w3school.com.cn/cssref/selector_active.asp" target="_blank">
+                                :active
+                            </a>
+                        </td>
+                        <td>
+                            a:active
+                        </td>
+                        <td>
+                            选择活动链接。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :hover 选择器" href="http://www.w3school.com.cn/cssref/selector_hover.asp" target="_blank">
+                                :hover
+                            </a>
+                        </td>
+                        <td>
+                            a:hover
+                        </td>
+                        <td>
+                            选择鼠标指针位于其上的链接。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :focus 选择器" href="http://www.w3school.com.cn/cssref/selector_focus.asp" target="_blank">
+                                :focus
+                            </a>
+                        </td>
+                        <td>
+                            input:focus
+                        </td>
+                        <td>
+                            选择获得焦点的 input 元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :first-letter 选择器" href="http://www.w3school.com.cn/cssref/selector_first-letter.asp" target="_blank">
+                                :first-letter
+                            </a>
+                        </td>
+                        <td>
+                            p:first-letter
+                        </td>
+                        <td>
+                            选择每个 &lt;p&gt; 元素的首字母。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :first-line 选择器" href="http://www.w3school.com.cn/cssref/selector_first-line.asp" target="_blank">
+                                :first-line
+                            </a>
+                        </td>
+                        <td>
+                            p:first-line
+                        </td>
+                        <td>
+                            选择每个 &lt;p&gt; 元素的首行。
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :first-child 选择器" href="http://www.w3school.com.cn/cssref/selector_first-child.asp" target="_blank">
+                                :first-child
+                            </a>
+                        </td>
+                        <td>
+                            p:first-child
+                        </td>
+                        <td>
+                            选择属于父元素的第一个子元素的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :before 选择器" href="http://www.w3school.com.cn/cssref/selector_before.asp" target="_blank">
+                                :before
+                            </a>
+                        </td>
+                        <td>
+                            p:before
+                        </td>
+                        <td>
+                            <p>
+                                在每个 &lt;p&gt; 元素的内容之前插入内容。
+                                <span style="color: #3366ff;">
+                                    <a title="http://www.w3school.com.cn/jsref/prop_style_content.asp" href="http://www.w3school.com.cn/jsref/prop_style_content.asp" target="_blank">
+                                        <span style="color: #3366ff;">
+                                            content
+                                        </span>
+                                    </a>
+                                </span>
+                                属性值：
+                            </p>
+                            <p>
+                                <em>
+                                    string
+                                </em>
+                                、
+                                <em>
+                                    url
+                                </em>
+                                、counter(
+                                <em>
+                                    name
+                                </em>
+                                )counter(
+                                <em>
+                                    name, list-style-type
+                                </em>
+                                )counters(
+                                <em>
+                                    name, string
+                                </em>
+                                )
+                            </p>
+                            <p>
+                                counters(
+                                <em>
+                                    name, string, list-style-type
+                                </em>
+                                )、attr(X)、open-quote、close-quote、
+                            </p>
+                            <p>
+                                no-open-quote、no-close-quote
+                            </p>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :after 选择器" href="http://www.w3school.com.cn/cssref/selector_after.asp" target="_blank">
+                                :after
+                            </a>
+                        </td>
+                        <td>
+                            p:after
+                        </td>
+                        <td>
+                            在每个 &lt;p&gt; 元素的内容之后插入内容。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :lang(language) 选择器" href="http://www.w3school.com.cn/cssref/selector_lang.asp" target="_blank">
+                                :lang(
+                                <em>
+                                    language
+                                </em>
+                                )
+                            </a>
+                        </td>
+                        <td>
+                            p:lang(it)
+                        </td>
+                        <td>
+                            选择带有以 "it" 开头的 lang 属性值的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS element1~element2 选择器" href="http://www.w3school.com.cn/cssref/selector_gen_sibling.asp" target="_blank">
+                                <em>
+                                    element1
+                                </em>
+                                ~
+                                <em>
+                                    element2
+                                </em>
+                            </a>
+                        </td>
+                        <td>
+                            p~ul
+                        </td>
+                        <td>
+                            选择前面有 &lt;p&gt; 元素的每个 &lt;ul&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS [attribute^=value] 选择器" href="http://www.w3school.com.cn/cssref/selector_attr_begin.asp" target="_blank">
+                                [
+                                <em>
+                                    attribute
+                                </em>
+                                ^=
+                                <em>
+                                    value
+                                </em>
+                                ]
+                            </a>
+                        </td>
+                        <td>
+                            a[src^="https"]
+                        </td>
+                        <td>
+                            选择其 src 属性值以 "https" 开头的每个 &lt;a&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS [attribute$=value] 选择器" href="http://www.w3school.com.cn/cssref/selector_attr_end.asp" target="_blank">
+                                [
+                                <em>
+                                    attribute
+                                </em>
+                                $=
+                                <em>
+                                    value
+                                </em>
+                                ]
+                            </a>
+                        </td>
+                        <td>
+                            a[src$=".pdf"]
+                        </td>
+                        <td>
+                            选择其 src 属性以 ".pdf" 结尾的所有 &lt;a&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS [attribute*=value] 选择器" href="http://www.w3school.com.cn/cssref/selector_attr_contain.asp" target="_blank">
+                                [
+                                <em>
+                                    attribute
+                                </em>
+                                *=
+                                <em>
+                                    value
+                                </em>
+                                ]
+                            </a>
+                        </td>
+                        <td>
+                            a[src*="abc"]
+                        </td>
+                        <td>
+                            选择其 src 属性中包含 "abc" 子串的每个 &lt;a&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :first-of-type 选择器" href="http://www.w3school.com.cn/cssref/selector_first-of-type.asp" target="_blank">
+                                :first-of-type
+                            </a>
+                        </td>
+                        <td>
+                            p:first-of-type
+                        </td>
+                        <td>
+                            选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :last-of-type 选择器" href="http://www.w3school.com.cn/cssref/selector_last-of-type.asp" target="_blank">
+                                :last-of-type
+                            </a>
+                        </td>
+                        <td>
+                            p:last-of-type
+                        </td>
+                        <td>
+                            选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :only-of-type 选择器" href="http://www.w3school.com.cn/cssref/selector_only-of-type.asp" target="_blank">
+                                :only-of-type
+                            </a>
+                        </td>
+                        <td>
+                            p:only-of-type
+                        </td>
+                        <td>
+                            选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :only-child 选择器" href="http://www.w3school.com.cn/cssref/selector_only-child.asp" target="_blank">
+                                :only-child
+                            </a>
+                        </td>
+                        <td>
+                            p:only-child
+                        </td>
+                        <td>
+                            选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :nth-child(n) 选择器" href="http://www.w3school.com.cn/cssref/selector_nth-child.asp" target="_blank">
+                                :nth-child(
+                                <em>
+                                    n
+                                </em>
+                                )
+                            </a>
+                        </td>
+                        <td>
+                            p:nth-child(2)
+                        </td>
+                        <td>
+                            选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :nth-last-child(n) 选择器" href="http://www.w3school.com.cn/cssref/selector_nth-last-child.asp" target="_blank">
+                                :nth-last-child(
+                                <em>
+                                    n
+                                </em>
+                                )
+                            </a>
+                        </td>
+                        <td>
+                            p:nth-last-child(2)
+                        </td>
+                        <td>
+                            同上，从最后一个子元素开始计数。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :nth-of-type(n) 选择器" href="http://www.w3school.com.cn/cssref/selector_nth-of-type.asp" target="_blank">
+                                :nth-of-type(
+                                <em>
+                                    n
+                                </em>
+                                )
+                            </a>
+                        </td>
+                        <td>
+                            p:nth-of-type(2)
+                        </td>
+                        <td>
+                            选择属于其父元素第二个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :nth-last-of-type(n) 选择器" href="http://www.w3school.com.cn/cssref/selector_nth-last-of-type.asp" target="_blank">
+                                :nth-last-of-type(
+                                <em>
+                                    n
+                                </em>
+                                )
+                            </a>
+                        </td>
+                        <td>
+                            p:nth-last-of-type(2)
+                        </td>
+                        <td>
+                            同上，但是从最后一个子元素开始计数。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :last-child 选择器" href="http://www.w3school.com.cn/cssref/selector_last-child.asp" target="_blank">
+                                :last-child
+                            </a>
+                        </td>
+                        <td>
+                            p:last-child
+                        </td>
+                        <td>
+                            选择属于其父元素最后一个子元素每个 &lt;p&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :root 选择器" href="http://www.w3school.com.cn/cssref/selector_root.asp" target="_blank">
+                                :root
+                            </a>
+                        </td>
+                        <td>
+                            :root
+                        </td>
+                        <td>
+                            选择文档的根元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :empty 选择器" href="http://www.w3school.com.cn/cssref/selector_empty.asp" target="_blank">
+                                :empty
+                            </a>
+                        </td>
+                        <td>
+                            p:empty
+                        </td>
+                        <td>
+                            选择没有子元素的每个 &lt;p&gt; 元素（包括文本节点）。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :target 选择器" href="http://www.w3school.com.cn/cssref/selector_target.asp" target="_blank">
+                                :target
+                            </a>
+                        </td>
+                        <td>
+                            #news:target
+                        </td>
+                        <td>
+                            选择当前活动的 #news 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :enabled 选择器" href="http://www.w3school.com.cn/cssref/selector_enabled.asp" target="_blank">
+                                :enabled
+                            </a>
+                        </td>
+                        <td>
+                            input:enabled
+                        </td>
+                        <td>
+                            选择每个启用的 &lt;input&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :disabled 选择器" href="http://www.w3school.com.cn/cssref/selector_disabled.asp" target="_blank">
+                                :disabled
+                            </a>
+                        </td>
+                        <td>
+                            input:disabled
+                        </td>
+                        <td>
+                            选择每个禁用的 &lt;input&gt; 元素
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :checked 选择器" href="http://www.w3school.com.cn/cssref/selector_checked.asp" target="_blank">
+                                :checked
+                            </a>
+                        </td>
+                        <td>
+                            input:checked
+                        </td>
+                        <td>
+                            选择每个被选中的 &lt;input&gt; 元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS :not(selector) 选择器" href="http://www.w3school.com.cn/cssref/selector_not.asp" target="_blank">
+                                :not(
+                                <em>
+                                    selector
+                                </em>
+                                )
+                            </a>
+                        </td>
+                        <td>
+                            :not(p)
+                        </td>
+                        <td>
+                            选择非 &lt;p&gt; 元素的每个元素。
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a title="CSS ::selection 选择器" href="http://www.w3school.com.cn/cssref/selector_selection.asp" target="_blank">
+                                ::selection
+                            </a>
+                        </td>
+                        <td>
+                            ::selection
+                        </td>
+                        <td>
+                            选择被用户选取的元素部分。只能设置两个属性，一个就是background,另一个就是color属性
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
